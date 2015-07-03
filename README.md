@@ -5,7 +5,13 @@ Converter Zawgyi Epub to the Unicode and Unicode Epub to the Zawgyi.
 ## Install
 
 ```
-npm install rabbit-epub
+npm install -g rabbit-epub
+```
+
+If you are using linux or mac , you may need root permission
+
+```
+sudo npm install -g rabbit-epub
 ```
 
 ## Usages

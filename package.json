@@ -1,6 +1,6 @@
 {
   "name": "rabbit-epub",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "convert between zawgyi-unicode epub",
   "main": "index.js",
   "keywords": [
@@ -27,6 +27,6 @@
     "process" : "*"
   },
   "bin" : {
-    "rabbit-epub " : "index.js"
+    "rabbit-epub" : "index.js"
   }
 }
