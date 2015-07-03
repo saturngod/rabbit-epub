@@ -1,4 +1,4 @@
-exports.getFileList = function(folderPath,callback,folder) {
+exports.getFileList = function(folderPath,to,callback,folder) {
 
   var fs = require('fs'),
   xml2js = require('xml2js'),
@@ -7,7 +7,7 @@ exports.getFileList = function(folderPath,callback,folder) {
   var parser = new xml2js.Parser();
   var files = [];
   var container =  path.resolve(folderPath, 'META-INF/container.xml');
-
+  var that = this;
   fs.readFile(container, function(err, data) {
 
     parser.parseString(data, function (err, result) {
@@ -15,7 +15,8 @@ exports.getFileList = function(folderPath,callback,folder) {
       var fullpath = root["full-path"];
 
       var fullpath =  path.resolve(folderPath, fullpath);
-
+      
+      
       fs.readFile(fullpath, function(err, data) {
         parser.parseString(data, function (err, result) {
           var mainfest = result.package.manifest[0].item;
@@ -25,7 +26,9 @@ exports.getFileList = function(folderPath,callback,folder) {
           }
 
           var removeFileName = require(path.resolve(__dirname,"./removeFileName.js"));
-
+          //convert title and meta
+          that.convert(fullpath,to);
+          
           callback(files,removeFileName(fullpath));
 
         });

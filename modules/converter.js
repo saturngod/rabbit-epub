@@ -48,12 +48,8 @@ exports.parse = function (file,to,callback) {
 
       writeStream.on('close', function(){
 
-        //already unzip
-        var container =  path.resolve(tmp_epub, 'META-INF/container.xml');
-
-        epub.convert(container,to);
-
-        epub.getFileList(tmp_epub,function(flist,folder){
+        
+        epub.getFileList(tmp_epub,to,function(flist,folder){
           for(var k=0;k<flist.length;k++) {
 
             var file = flist[k];
