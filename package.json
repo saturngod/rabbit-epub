@@ -1,0 +1,32 @@
+{
+  "name": "rabbit-epub",
+  "version": "0.0.5",
+  "description": "convert between zawgyi-unicode epub",
+  "main": "index.js",
+  "keywords": [
+    "epub",
+    "zawgyi",
+    "myanmar",
+    "unicode",
+    "rabbit"
+  ],
+  "repository": {
+          "type": "git",
+          "url": "https://github.com/saturngod/rabbit-epub.git"
+      },
+  "author": "saturngod",
+  "license": "MIT",
+  "dependencies": {
+    "unzip2" : "*",
+    "cli-args" : "*",
+    "mkdirp" : "*",
+    "fstream" : "*",
+    "xml2js" : ">=0.4.9",
+    "zip-folder" : ">=1.0",
+    "rimraf" : ">=2.4.1",
+    "process" : "*"
+  },
+  "bin" : {
+    "rabbit-epub " : "index.js"
+  }
+}
